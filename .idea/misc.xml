@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/layout/activity_display_message.xml" value="0.1" />
-        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/layout/activity_display_message.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/layout/activity_main.xml" value="0.2296875" />
+        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/menu/activity_display_message.xml" value="0.2" />
+        <entry key="..\:/Users/therr/Documents/Courses/CMPS366OPL/EightPuzzle/app/src/main/res/menu/activity_main.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>
