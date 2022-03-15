@@ -10,10 +10,12 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.problets.eightpuzzle.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private final int[] finalState = {1, 2, 3, 4, 0, 5, 6, 7, 8};
-    private Button topleft, topcenter, topright, midleft, midcenter, midright, bottomleft, bottomcenter, bottomright;
+    private ActivityMainBinding binding;
     // private static final int GET_START_STATE = 0;
     // private int currentState[] = {1, 3, 5, 7, 0, 2, 4, 6, 8};
     private int[] currentState = null;
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         // Simple way to transfer data between activities - static class variables
         currentState = StartStateActivity.startState;
@@ -33,25 +37,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		}
 		*/
 
-        topleft = findViewById(R.id.topleft);
-        topcenter = findViewById(R.id.topcenter);
-        topright = findViewById(R.id.topright);
-        midleft = findViewById(R.id.midleft);
-        midcenter = findViewById(R.id.midcenter);
-        midright = findViewById(R.id.midright);
-        bottomleft = findViewById(R.id.bottomleft);
-        bottomcenter = findViewById(R.id.bottomcenter);
-        bottomright = findViewById(R.id.bottomright);
-
-        topleft.setOnClickListener(this);
-        topcenter.setOnClickListener(this);
-        topright.setOnClickListener(this);
-        midleft.setOnClickListener(this);
-        midcenter.setOnClickListener(this);
-        midright.setOnClickListener(this);
-        bottomleft.setOnClickListener(this);
-        bottomcenter.setOnClickListener(this);
-        bottomright.setOnClickListener(this);
+        binding.topleft.setOnClickListener(this);
+        binding.topcenter.setOnClickListener(this);
+        binding.topright.setOnClickListener(this);
+        binding.midleft.setOnClickListener(this);
+        binding.midcenter.setOnClickListener(this);
+        binding.midright.setOnClickListener(this);
+        binding.bottomleft.setOnClickListener(this);
+        binding.bottomcenter.setOnClickListener(this);
+        binding.bottomright.setOnClickListener(this);
 
         if (getSupportActionBar() != null) {
             ActionBar actionBar = getSupportActionBar();
@@ -155,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case -1:
                 return "right";
             case 1:
+                return "left";
             case -3:
                 return "down";
             case 3:
@@ -277,15 +272,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * Updates button faces with appropriate strings
      */
     private void updateButtons(int[] currentState) {
-        topleft.setText(convert(currentState[0], topleft));
-        topcenter.setText(convert(currentState[1], topcenter));
-        topright.setText(convert(currentState[2], topright));
-        midleft.setText(convert(currentState[3], midleft));
-        midcenter.setText(convert(currentState[4], midcenter));
-        midright.setText(convert(currentState[5], midright));
-        bottomleft.setText(convert(currentState[6], bottomleft));
-        bottomcenter.setText(convert(currentState[7], bottomcenter));
-        bottomright.setText(convert(currentState[8], bottomright));
+        binding.topleft.setText(convert(currentState[0], binding.topleft));
+        binding.topcenter.setText(convert(currentState[1], binding.topcenter));
+        binding.topright.setText(convert(currentState[2], binding.topright));
+        binding.midleft.setText(convert(currentState[3], binding.midleft));
+        binding.midcenter.setText(convert(currentState[4], binding.midcenter));
+        binding.midright.setText(convert(currentState[5], binding.midright));
+        binding.bottomleft.setText(convert(currentState[6], binding.bottomleft));
+        binding.bottomcenter.setText(convert(currentState[7], binding.bottomcenter));
+        binding.bottomright.setText(convert(currentState[8], binding.bottomright));
 
     }
 

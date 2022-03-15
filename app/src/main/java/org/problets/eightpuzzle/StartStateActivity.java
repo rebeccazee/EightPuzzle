@@ -3,9 +3,10 @@ package org.problets.eightpuzzle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.problets.eightpuzzle.databinding.ActivityMainBinding;
 
 /**
  * @author Amruth
@@ -13,22 +14,25 @@ import androidx.appcompat.app.AppCompatActivity;
 public class StartStateActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_MESSAGE = "org.problets.helloworld.STARTSTATE";
     static int[] startState = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
+    private ActivityMainBinding binding;
     private int counter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Can share layout among activities
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        (findViewById(R.id.topleft)).setOnClickListener(this);
-        (findViewById(R.id.topcenter)).setOnClickListener(this);
-        (findViewById(R.id.topright)).setOnClickListener(this);
-        (findViewById(R.id.midleft)).setOnClickListener(this);
-        (findViewById(R.id.midcenter)).setOnClickListener(this);
-        (findViewById(R.id.midright)).setOnClickListener(this);
-        (findViewById(R.id.bottomleft)).setOnClickListener(this);
-        (findViewById(R.id.bottomcenter)).setOnClickListener(this);
-        (findViewById(R.id.bottomright)).setOnClickListener(this);
+        binding.topleft.setOnClickListener(this);
+        binding.topcenter.setOnClickListener(this);
+        binding.topright.setOnClickListener(this);
+        binding.midleft.setOnClickListener(this);
+        binding.midcenter.setOnClickListener(this);
+        binding.midright.setOnClickListener(this);
+        binding.bottomleft.setOnClickListener(this);
+        binding.bottomcenter.setOnClickListener(this);
+        binding.bottomright.setOnClickListener(this);
 
         // Counter used to populate the start state
         counter = 1;
@@ -84,15 +88,15 @@ public class StartStateActivity extends AppCompatActivity implements View.OnClic
      * Updates button faces with appropriate strings
      */
     private void updateButtons() {
-        ((Button) findViewById(R.id.topleft)).setText(convert(startState[0]));
-        ((Button) findViewById(R.id.topcenter)).setText(convert(startState[1]));
-        ((Button) findViewById(R.id.topright)).setText(convert(startState[2]));
-        ((Button) findViewById(R.id.midleft)).setText(convert(startState[3]));
-        ((Button) findViewById(R.id.midcenter)).setText(convert(startState[4]));
-        ((Button) findViewById(R.id.midright)).setText(convert(startState[5]));
-        ((Button) findViewById(R.id.bottomleft)).setText(convert(startState[6]));
-        ((Button) findViewById(R.id.bottomcenter)).setText(convert(startState[7]));
-        ((Button) findViewById(R.id.bottomright)).setText(convert(startState[8]));
+        binding.topleft.setText(convert(startState[0]));
+        binding.topcenter.setText(convert(startState[1]));
+        binding.topright.setText(convert(startState[2]));
+        binding.midleft.setText(convert(startState[3]));
+        binding.midcenter.setText(convert(startState[4]));
+        binding.midright.setText(convert(startState[5]));
+        binding.bottomleft.setText(convert(startState[6]));
+        binding.bottomcenter.setText(convert(startState[7]));
+        binding.bottomright.setText(convert(startState[8]));
 
     }
 
