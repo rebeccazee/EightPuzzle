@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
-public class DisplayMessageActivity extends Activity {
+public class DisplayMessageActivity extends AppCompatActivity {
 
     // @SuppressLint("NewApi")
     @Override
