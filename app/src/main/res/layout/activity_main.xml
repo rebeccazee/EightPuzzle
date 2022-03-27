@@ -1,68 +1,56 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:columnCount="3"
+    android:rowCount="3"
     tools:context=".MainActivity">
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:rowCount="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13">
+    <Button
+        android:id="@+id/topleft"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
+    <Button
+        android:id="@+id/topcenter"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/topleft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-<!--            android:onClick="respond"-->
+    <Button
+        android:id="@+id/topright"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/topcenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/midleft"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/topright"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/midcenter"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/midleft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/midright"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/midcenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bottomleft"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/midright"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bottomcenter"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/bottomleft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bottomright"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal" />
 
-        <Button
-            android:id="@+id/bottomcenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/bottomright"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </GridLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</GridLayout>
